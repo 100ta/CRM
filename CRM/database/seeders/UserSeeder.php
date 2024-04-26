@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         DB::table('users')->insert([
             'name' => '100tarou',

@@ -5,14 +5,16 @@ import { reactive } from 'vue';
 import { Inertia } from '@inertiajs/inertia';
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 
-defineProps({
-    errors: Object
+const props = defineProps({
+    item: Object
 })
 
 const form = reactive({
-    name: null,
-    memo: null,
-    price: null
+    id: props.item.is
+    name: props.item.name,
+    memo: props.item.memo,
+    price: props.item.price.
+    is_selling: props.item.is_selling.
 })
 
 const storeItem = () =>{
@@ -21,11 +23,11 @@ const storeItem = () =>{
 </script>
 
 <template>
-    <Head title="商品登録" />
+    <Head title="商品編集" />
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">商品登録</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">商品編集</h2>
         </template>
         <!--<BreezeValidationErrors :errors="errors" />-->
         <div class="py-12">

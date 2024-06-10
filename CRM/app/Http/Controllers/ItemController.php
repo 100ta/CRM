@@ -36,24 +36,16 @@ class ItemController extends Controller
             'memo'=>$request->memo,
             'price'=>$request->price,
         ]);
-
-        return to_route('items.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Item $item)
     {
         return Inertia::render('Items/Show',['item'=>$item]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Item $item)
     {
-        //
+        return Inertia::render('Items/Edit',['item'=>$item]);
     }
 
     /**

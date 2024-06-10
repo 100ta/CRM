@@ -1,12 +1,11 @@
 <script setup>
 import { computed } from 'vue';
-import { usePage } from '@inertiajs/inertia-vue3';
 
 const props = defineProps({
     errors:Object
 })
 
-const hasErrors = computed(() => Object.keys(errors.value).length > 0);
+const hasErrors = computed(() => Object.keys(props.errors.value).length > 0);
 </script>
 
 <template>

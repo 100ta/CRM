@@ -14,6 +14,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        $customers = Customer::SearchCustomers()
+        ->select('id','name','kana','tel')->paginate(50);
+
         return Inertia::render('Customers/Index', [
             'customers' => Customer::select('id', 'name', 'kana', 'tel')->paginate(50)
         ]); 

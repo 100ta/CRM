@@ -5,7 +5,6 @@ import Pagination from '@/Components/Pagination.vue' ;
 import { ref } from 'vue';
 import { Inertia } from '@inertiajs/inertia'; 
 
-
 defineProps({
     customers:Object
 })
@@ -23,9 +22,9 @@ const searchCustomers = () => {
     <Head title="顧客一覧"/>
 
     <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">顧客一覧</h2>
-        </template>
+    <template #header>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">顧客一覧</h2>
+    </template>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

@@ -20,20 +20,30 @@ class CustomerController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return Inertia::render('Customers/Create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreCustomerRequest $request)
     {
-        //
+        Customer::create([
+            'name' => $request->name,
+            'kana' => $request->kana,
+            'tel' => $request->tel,
+            'email' => $request->email,
+            'postcode' => $request->postcode,
+            'address' => $request->address,
+            'birthday' => $request->birthday,
+            'gender' => $request->gender,
+            'memo' => $request->memo,
+        ]);
+
+        return to_route('customers.index')
+        ->with([
+            'message' => '登録しました。',
+            'status' => 'success'
+        ]); 
     }
 
     /**

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Customer;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,5 +34,8 @@ Route::resource('items', ItemController::class)
 
 Route::resource('customers', CustomerController::class)
 ->middleware(['auth', 'verified']);
+
+//Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+
 
 require __DIR__.'/auth.php';
